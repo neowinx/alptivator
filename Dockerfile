@@ -11,6 +11,5 @@ RUN          apk add --no-cache bash && \
              mv activator-1.3.9-minimal/bin/activator /usr/local/bin && \
              mv activator-1.3.9-minimal/libexec /usr/local && \
              rm -rf activator-1.3.9-minimal/ && \
-             rm typesafe-activator-1.3.9-minimal.zip
-
-ENTRYPOINT   /usr/local/bin/activator
+             rm typesafe-activator-1.3.9-minimal.zip && \
+             echo "`activator list-templates`"
