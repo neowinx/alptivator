@@ -8,9 +8,41 @@ Alpine Linux is much smaller than most distribution base images (~5MB), and thus
 
 - Docker 1.6+
 
-## About
+## How to use
 
-This image is ready to use and prepared to execute all commands inside the yolomer user in the image. All npm packages are installed inside the /home/yolomer/.npm-packages directory.
+```bash
+docker run [DOCKER_OPTIONS] alptivator activator [ACTIVATOR_CMD]
+```
+
+Where [ACTIVATOR_CMD] is any subcommand like ui, compile, etc.
+
+### Use examples
+
+#### Ui
+
+To run the activator ui:
+
+```bash
+docker run -ti --rm alptivator ui
+```
+
+#### Compile
+
+Inside your project:
+
+```bash
+docker run -ti --rm alptivator activator compile
+```
+
+#### Repo directories
+
+You can mount your sbt, ivy and maven directories inside the container to avoid donwload the next time you execute the activator command.
+
+I recommend you to do it. It is slower the first time, but believe me, it is almost **mandatory**.
+
+```bash
+docker run -ti --rm -v $USER/.sbt:/root/.sbt -v $USER/.ivy2:/root/.ivy2 alptivator activator compile
+```
 
 ### Enjoy
 
