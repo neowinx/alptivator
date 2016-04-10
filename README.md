@@ -11,7 +11,7 @@ Alpine Linux is much smaller than most distribution base images (~5MB), and thus
 ## How to use
 
 ```bash
-docker run [DOCKER_OPTIONS] alptivator activator [ACTIVATOR_CMD]
+docker run [DOCKER_OPTIONS] neowinx/alptivator activator [ACTIVATOR_CMD]
 ```
 
 Where [ACTIVATOR_CMD] is any subcommand like ui, compile, etc.
@@ -23,7 +23,7 @@ Where [ACTIVATOR_CMD] is any subcommand like ui, compile, etc.
 To run the activator ui:
 
 ```bash
-docker run -ti --rm alptivator ui
+docker run -ti --rm neowinx/alptivator activator ui
 ```
 
 #### Compile
@@ -31,7 +31,7 @@ docker run -ti --rm alptivator ui
 Inside your project:
 
 ```bash
-docker run -ti --rm alptivator activator compile
+docker run -ti --rm neowinx/alptivator activator compile
 ```
 
 #### Repo directories
@@ -41,7 +41,7 @@ You can mount your sbt, ivy and maven directories inside the container to avoid 
 I recommend you to do it. It is slower the first time, but believe me, it is almost **mandatory**.
 
 ```bash
-docker run -ti --rm -v $USER/.sbt:/root/.sbt -v $USER/.ivy2:/root/.ivy2 alptivator activator compile
+docker run -ti --rm -v $USER/.sbt:/root/.sbt -v $USER/.ivy2:/root/.ivy2 neowinx/alptivator activator compile
 ```
 
 ### Enjoy
