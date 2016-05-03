@@ -41,7 +41,7 @@ You can mount your sbt, ivy and maven directories inside the container to avoid 
 I recommend you to do it. It is slower the first time, but believe me, it is almost **mandatory**.
 
 ```bash
-docker run -ti --rm -v $USER/.sbt:/root/.sbt -v $USER/.ivy2:/root/.ivy2 neowinx/alptivator activator compile
+docker run -ti --rm -v $HOME/.sbt:/root/.sbt -v $HOME/.ivy2:/root/.ivy2 neowinx/alptivator activator compile
 ```
 
 ### Enjoy
